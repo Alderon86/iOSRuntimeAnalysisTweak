@@ -1,0 +1,18 @@
+MODULES = jailed
+include $(THEOS)/makefiles/common.mk
+
+TWEAK_NAME = LoggingTweak
+DISPLAY_NAME = LogMePlz_KThnx
+BUNDLE_ID = com.GodIsDeadProductions.WhyNotLogTheThings
+
+ARCHS = arm64
+
+LoggingTweak_FILES = Tweak.xm
+LoggingTweak_IPA = /Abs/Path/To/Target/app.ipa
+
+LoggingTweak_USE_FISHHOOK=1
+LoggingTweak_USE_CYCRIPT=0
+LoggingTweak_USE_FLEX=0
+LoggingTweak_USE_OVERLAY=0
+
+include $(THEOS_MAKE_PATH)/tweak.mk

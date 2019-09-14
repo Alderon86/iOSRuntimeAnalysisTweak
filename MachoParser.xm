@@ -39,6 +39,7 @@ uint32_t get_image_index(const char* comp_name)
     }
   }
   NSLog(@"[MachO]: \nFailed to find image matching %s", comp_name);
+  // Add Proper Error Handling when Image can't be identified //
   return 9999999;
 }
 

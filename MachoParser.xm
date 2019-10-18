@@ -137,8 +137,9 @@ void parseHeader(const struct mach_header_64* header){
 //Lets do some shit
 %ctor{
   NSLog(@"[MachO]: \nexec(./FuckBitches) && exec(./GetMoney)");
-
-
+  
+  // EDIT BELOW
+  // Change Target to the name of the target image you want to quickly analyze.
   const char* target = "****************";
   uint32_t target_index = get_image_index(target);
   bool target_arch = arch_is_64(target_index);
@@ -155,7 +156,6 @@ void parseHeader(const struct mach_header_64* header){
     // 32 bit Arch
     const struct mach_header* header = (struct mach_header *)_dyld_get_image_name(target_index);
     NSLog(@"[MachO]: \nload 32 bit header, Magic => %u",header->magic);
-    // I'll get to it, who the fuck still uses 32 bit iOS products anyway?
+    // I'll get to it, who the hell still uses 32 bit iOS products anyway?
   }
-
 }
